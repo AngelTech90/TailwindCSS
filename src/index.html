@@ -19,27 +19,50 @@
 
     <!-- *For set and manipulate the background we have "bg" class -->
 
-    <div class="p-6 max-w-sm mx-auto bg-sky rounded-xl shadow-lg flex items-center space-x-4">
+    <div class="p-6 max-w-sm mx-auto bg-sky rounded-xl shadow-lg flex items-center space-x-4 bg-sky-600">
         <div class="shrink-0">
             <img class="h-12 w-12" src="/img/logo.svg" alt="ChitChat Logo">
             </div>
             <div>
             <div class="text-xl font-medium text-black">ChitChat</div>
-            <p class="text-slate-500">You have a new message!</p>
+            <p class="text-slate-800">You have a new message!</p>
             </div>
     </div>
 
 
-    <div class = "max-w-sm bg-red">
-
-        D
-
-    </div>
-
-
-    <a class="link underline">
+    <!-- *We can use costume properties using our asigned class name in our js file inside "[]" -->
+    <a class="underline w-10 h-10 bg-azul-oscuro text-rojo-claro mx-[100px] my-[1 50px] border-[4px] border-rojo-claro">
+    
         Hello world!
     </a>
+
+    <!-- *Text proves with tailwid :  -->
+
+    <p class = "text-rojo-claro my-[60px] mx-[100px] border-[5px] underline border-azul-oscuro text-center max-w-lg max-h-lg h-[200px] w-[200px] bg-green-600 text-[2rem]">
+
+        Hello every body
+
+    </p>
+
+
+    <!-- *Here is a litle tecnique for give gradients to our text: -->
+    <!-- We make a gradient of our background color, we adjust our background size to our text size and then we make transparent our text:-->
+
+    <p class = " w-[100%] h-[10%] text-center text-transparent bg-clip-text bg-gradient-to-t from-red-600 to-blue-700 text-[6rem]">
+
+        Hello Buddies
+
+    </p>
+
+    <div class = "w-[400px] h-[400px] bg-gradient-to-r from-rojo-claro to-azul-oscuro flex gap-[7px] my-[70px] flex-col items-center">
+
+        <p class="bg-green-500 w-[100px] h-[100px]"></p>
+        <p class="bg-green-500 w-[100px] h-[100px]"></p>
+        <p class="bg-green-500 w-[100px] h-[100px]"></p>
+        <p class="bg-green-500 w-[100px] h-[100px]"></p>
+        <p class="bg-green-500 w-[100px] h-[100px]"></p>
+
+    </div>
 
 </body>
 </html>
