@@ -1,0 +1,67 @@
+
+.navbarOption{
+
+    color:white;
+
+    font-size: 1.5rem;
+
+}
+
+.navbarOption:hover{
+
+    color:blue;
+
+    transition: all 400ms;
+
+}
+
+
+#menuAccessButton{
+
+    transition: all 600ms;
+
+}
+
+#menuAccessButton:hover{
+
+    scale: 1.05;
+
+    background-color: #0017e7;
+
+}
+
+
+.pageLogo{
+
+    transition: all 500ms;
+
+}
+
+@keyframes slide{
+
+    0%,100%
+    {
+
+        transform: translateY(0rem);
+
+    }
+
+    50%
+    {
+
+        transform: translateY(0.8rem);
+
+    }
+
+}
+
+.carouselImage{
+
+    width: 300px;
+    height: 500px;
+
+    animation: 2s slide linear infinite;
+
+}
+
+
