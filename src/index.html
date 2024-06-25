@@ -109,48 +109,49 @@
 
 
             <!-- * Middle container -->
-            <div class = "w-[100%] h-[90%] flex bg-red-300">
+            <div class = "w-[100%] h-[90%] flex bg-red-300 ">
 
                 <!-- *Section 1  -->
-                <section class = "w-[35%] h-[100%] flex justify-center items-center"> 
+                <section class = "w-[35%] h-[100%] flex justify-center items-center "> 
 
                     <!-- *Info box -->
-                    <div class = "w-[90%] h-[70%] bg-infoBox-color shadow-lg shadow-gray-300 text-white">
+                    <div class = "w-[90%] h-[70%] bg-infoBox-color shadow-lg shadow-gray-300 flex flex-col gap-[1rem] text-white infoBox">
 
-                        <h2 class = "w-[100%] h-[10%] text-center text-white">Title</h2>
+                        <h2 class = "w-[100%] h-[10%] text-center text-white text-[3rem] infoBoxElement">Title</h2>
                         
-                        <p class = "w-[100%] h-[80%] text-white">
+                        <p class = "w-[100%] h-[80%] text-white infoBoxElement">
 
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus voluptate? Quam, obcaecati ea nisi officiis illo explicabo, officia modi, maxime odit corporis asperiores ipsum possimus placeat minus consequatur vero!
+                            lorem
 
                         </p>
 
-                        <div class = "w-[100%] h-[10%]">
+                        <section class = "w-[100%] h-[10%] flex justify-center infoBoxElement">
 
-                            <button class = "text-white">Buy now</button>
+                            <button class = "text-white infoBoxElement">Buy now</button>
 
-                        </div>
+                        </section>
 
                     </div>
 
                 </section>
 
+
                 <!-- *Section 2 -->
-                <section class = "w-[65%] h-[100%] flex justify-center items-center flex-col">
+                <section class = "w-[65%] h-[100%] flex justify-center items-center  carouselContainer bg-white">
 
-                        <h2 class = "w-[100%] h-[8%] text-end text-[3rem] mr-[23%] mt-[5%] text-white" >Popular Books</h2>
+                        <!-- <h2 class = "w-[100%] h-[8%] text-end text-[3rem] z-10 mr-[23%] mt-[5%] text-white" >Popular Books</h2>
 
-                        <!-- Carousel -->
                         <main class="h-[100%] w-[100%] flex justify-end items-center mr-[20%]">
 
                             <div x-data="imageSlider" class="relative max-w-2xl overflow-hidden rounded-md p-2 sm:p-4">
                         
-                                <!-- Slider Button -->
+                                    Slider Button 
                                 <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
                                     <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
                                 </button>
                         
-                                <!-- Slider Button -->
+                                    Slider Button
                                 <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
                                     <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
                                 </button>
@@ -172,7 +173,42 @@
 
                             </div>
 
-                        </main>
+                        </main> 
+                        
+                        -->
+
+                    <!-- Carousel 2 -->
+                    <div class = "w-[100%] h-[40%] bg-red-500 overflow-hidden carouselContainer">
+
+                        <div class = "slide w-[100%] h-[100%] flex ">
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
+                                    <img src="../assets/images/cover-1.jpg" alt="" class = "carouselImage">
+    
+                                </a>   
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
+                                    <img src="../assets/images/cover-2.jpg" alt="" class = "carouselImage">
+    
+                                </a>   
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
+                                    <img src="../assets/images/cover-3.jpg" alt="" class = "carouselImage " id = "image3">
+    
+                                </a>   
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
+                                    <img src="../assets/images/cover-5.jpg" alt="" class = "carouselImage " id = "image3">
+    
+                                </a>   
+                                
+                        </div>
+
+                    </div>
 
                 </section>
 

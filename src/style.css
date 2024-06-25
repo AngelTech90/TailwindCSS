@@ -1,4 +1,5 @@
 
+
 .navbarOption{
 
     color:white;
@@ -37,30 +38,81 @@
 
 }
 
+
 @keyframes slide{
 
-    0%,100%
+    from
     {
 
-        transform: translateY(0rem);
+        transform: translateX(-105%);
 
     }
 
-    50%
+    to
     {
 
-        transform: translateY(0.8rem);
+        transform: translateX(100%);
 
     }
 
 }
 
+
 .carouselImage{
 
-    width: 300px;
-    height: 500px;
+    width: 150px;
+    height: 240px;
 
-    animation: 2s slide linear infinite;
+}
+
+
+.carouselContainer::before{
+
+    content: '';
+
+    height: 40%;
+
+    width: 25%;
+
+    z-index: 2;
+
+    background: white;
+
+}
+
+
+.carouselContainer::after{
+
+    content: '';
+
+    height: 40%;
+
+    z-index: 2;
+
+    width: 25%;
+
+    background: white;
+
+}
+
+
+.slide{
+
+    animation: 13s slide linear infinite;
+
+}
+
+
+.slide:hover{
+
+    animation-play-state: paused;
+
+}
+
+
+.imageContainer{
+
+    margin-left: 0.5rem;
 
 }
 
