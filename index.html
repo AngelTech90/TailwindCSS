@@ -60,7 +60,7 @@
 
                         </svg>
 
-                        <input type="text" placeholder= " Search your books" id = "searchInput" class = "w-[75%] h-[35%] outline-none text-gray-400 text-[0.8rem] pr-[15%] text-end rounded-xl ml-[-1.5rem] bg-motherbox-color shadow-md shadow-blue-700">
+                        <input type="text" placeholder= " Search your books" id = "searchInput" class = "w-[75%] h-[35%] outline-none text-gray-400 text-[0.8rem] pr-[15%] text-end rounded-xl ml-[-1.5rem] bg-motherbox-color shadow-md shadow-blue-700 ring-2 focus:ring-sky-400">
 
                     </div>
 
@@ -116,27 +116,52 @@
             </nav>
 
 
-            <!-- * Middle container -->
-            <div class = "w-[100%] h-[90%] flex bg-red-300 ">
+            <!-- * Middle Section -->
+            <section class = "w-[100%] h-[90%] flex bg-red-300 ">
 
                 <!-- *Section 1  -->
                 <section class = "w-[40%] h-[100%] flex justify-center items-center "> 
 
                     <!-- *Info box -->
-                    <div class = "w-[90%] h-[70%] bg-infoBox-color shadow-lg shadow-gray-300 flex flex-col items-center p-[1rem] gap-[2rem] text-white ">
+                    <div class = "w-[90%] h-[70%] bg-infoBox-color shadow-lg shadow-gray-300 flex flex-col items-center p-[1rem] gap-[1.5rem] text-white ">
 
-                        <h2 class = "w-fit fit text-center text-white text-[3rem]">Title of Box</h2>
+                        <h2 class = "w-fit fit text-center text-white text-[3rem] infoBoxTitle">Title of Box</h2>
                         
-                        <p class = "w-fit h-fit flex text-start text-white ">
+                        <p class = "w-fit h-fit flex text-start text-[1.1rem] text-white infoBoxParaph">
 
                             Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, repellendus voluptate? Quam, obcaecati ea nisi officiis illo explicabo, officia modi, maxime odit corporis asperiores ipsum possimus placeat minus consequatur vero!
                             lorem
 
                         </p>
 
+                        <!-- *Main features container -->
+                        <div class = "w-[90%] h-fit flex items-center justify-center gap-[1rem]">
 
+                            <!-- * Main feature 1 -->
+                            <div class = "flex flex-col justify-center items-center ">
 
-                        <button class = "text-white w-[35%] h-[10%] rounded-lg bg-red-600 text-[1.3rem]">Buy now</button>
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M12 6.042A8.967 8.967 0 0 0 6 3.75c-1.052 0-2.062.18-3 .512v14.25A8.987 8.987 0 0 1 6 18c2.305 0 4.408.867 6 2.292m0-14.25a8.966 8.966 0 0 1 6-2.292c1.052 0 2.062.18 3 .512v14.25A8.987 8.987 0 0 0 18 18a8.967 8.967 0 0 0-6 2.292m0-14.25v14.25" />
+                                </svg>
+                                
+                                <h2 class = "text-white text-[1.2rem] mainFeatureTitle ">+10000 Books</h2>
+
+                            </div>
+
+                            <!-- *Main feature 2 -->
+                            <div class = "flex flex-col justify-center items-center ml-[5%]">
+
+                                <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2" stroke="currentColor" class="size-16">
+                                    <path stroke-linecap="round" stroke-linejoin="round" d="M18 18.72a9.094 9.094 0 0 0 3.741-.479 3 3 0 0 0-4.682-2.72m.94 3.198.001.031c0 .225-.012.447-.037.666A11.944 11.944 0 0 1 12 21c-2.17 0-4.207-.576-5.963-1.584A6.062 6.062 0 0 1 6 18.719m12 0a5.971 5.971 0 0 0-.941-3.197m0 0A5.995 5.995 0 0 0 12 12.75a5.995 5.995 0 0 0-5.058 2.772m0 0a3 3 0 0 0-4.681 2.72 8.986 8.986 0 0 0 3.74.477m.94-3.197a5.971 5.971 0 0 0-.94 3.197M15 6.75a3 3 0 1 1-6 0 3 3 0 0 1 6 0Zm6 3a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Zm-13.5 0a2.25 2.25 0 1 1-4.5 0 2.25 2.25 0 0 1 4.5 0Z" />
+                                </svg>
+
+                                <h2 class = "text-white text-[1.2rem] mainFeatureTitle">+7000 Clients</h2>
+
+                            </div>
+
+                        </div>
+
+                        <button class = "text-white w-[45%] h-[10%] rounded-lg bg-red-600 text-[1.2rem] flex justify-center items-center infoButton">See our collections</button>
 
                     </div>
 
@@ -183,25 +208,28 @@
 
                 </section>
 
-            </div>
+            </section>
 
 
-            <!-- *Features container -->
-            <div class = "w-[100%] h-[40%] flex bg-red-500">
+            <!-- *Features section -->
+            <section class = "w-[100%] h-[40%] flex bg-red-500">
 
                 <!-- *Features section 1 -->
                     <section class="featureSection">
 
-                        <!-- * Feature icon  -->
+                        <!-- *Feature Icon -->
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 8.25h19.5M2.25 9h19.5m-16.5 5.25h6m-6 2.25h3m-3.75 3h15a2.25 2.25 0 0 0 2.25-2.25V6.75A2.25 2.25 0 0 0 19.5 4.5h-15a2.25 2.25 0 0 0-2.25 2.25v10.5A2.25 2.25 0 0 0 4.5 19.5Z" />
+                        </svg>
                         
 
                         <!-- * Feature title -->
-                        <h2 class = "featureTitle">Feature Title</h2>
+                        <h2 class = "featureTitle">Secure Payment</h2>
 
                         <!-- * Feature text -->
                         <p class="featureText">
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam tempora ex laborum exercitationem amet quis velit. Minima adipisci laudantium fugit eaque.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam 
 
                         </p>    
 
@@ -211,15 +239,18 @@
                     <section class="featureSection">
 
                         <!-- * Feature icon  -->
-                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M12 6v6h4.5m4.5 0a9 9 0 1 1-18 0 9 9 0 0 1 18 0Z" />
+                        </svg>
+
 
                         <!-- * Feature title -->
-                        <h2 class = "featureTitle">Feature Title</h2>
+                        <h2 class = "featureTitle">Quick Delivery</h2>
 
                         <!-- * Feature text -->
                         <p class="featureText">
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam tempora ex laborum exercitationem amet quis velit. Minima adipisci laudantium fugit eaque.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam 
 
                         </p>
 
@@ -230,15 +261,17 @@
                     <section class="featureSection">
 
                         <!-- * Feature icon  -->
-                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-20">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M16.5 18.75h-9m9 0a3 3 0 0 1 3 3h-15a3 3 0 0 1 3-3m9 0v-3.375c0-.621-.503-1.125-1.125-1.125h-.871M7.5 18.75v-3.375c0-.621.504-1.125 1.125-1.125h.872m5.007 0H9.497m5.007 0a7.454 7.454 0 0 1-.982-3.172M9.497 14.25a7.454 7.454 0 0 0 .981-3.172M5.25 4.236c-.982.143-1.954.317-2.916.52A6.003 6.003 0 0 0 7.73 9.728M5.25 4.236V4.5c0 2.108.966 3.99 2.48 5.228M5.25 4.236V2.721C7.456 2.41 9.71 2.25 12 2.25c2.291 0 4.545.16 6.75.47v1.516M7.73 9.728a6.726 6.726 0 0 0 2.748 1.35m8.272-6.842V4.5c0 2.108-.966 3.99-2.48 5.228m2.48-5.492a46.32 46.32 0 0 1 2.916.52 6.003 6.003 0 0 1-5.395 4.972m0 0a6.726 6.726 0 0 1-2.749 1.35m0 0a6.772 6.772 0 0 1-3.044 0" />
+                        </svg>
 
                         <!-- * Feature title -->
-                        <h2 class = "featureTitle">Feature Title</h2>
+                        <h2 class = "featureTitle">Best Quality</h2>
 
                         <!-- * Feature text -->
                         <p class="featureText">
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam tempora ex laborum exercitationem amet quis velit. Minima adipisci laudantium fugit eaque.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam 
 
                         </p>
 
@@ -249,22 +282,74 @@
                     <section class="featureSection">
 
                         <!-- * Feature icon  -->
-                        
+                        <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="2.5" stroke="currentColor" class="size-20 text-white">
+                            <path stroke-linecap="round" stroke-linejoin="round" d="M9 12.75 11.25 15 15 9.75m-3-7.036A11.959 11.959 0 0 1 3.598 6 11.99 11.99 0 0 0 3 9.749c0 5.592 3.824 10.29 9 11.623 5.176-1.332 9-6.03 9-11.622 0-1.31-.21-2.571-.598-3.751h-.152c-3.196 0-6.1-1.248-8.25-3.285Z" />
+                        </svg>
 
                         <!-- * Feature title -->
-                        <h2 class = "featureTitle">Feature Title</h2>
+                        <h2 class = "featureTitle">Return Guarantee</h2>
 
                         <!-- * Feature text -->
                         <p class="featureText">
 
-                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam tempora ex laborum exercitationem amet quis velit. Minima adipisci laudantium fugit eaque.
+                            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quibusdam repudiandae facilis quo, nam eius asperiores fugiat, accusamus numquam 
 
                         </p>
 
 
                     </section>
 
-            </div>
+            </section>
+
+
+            <!-- * Slider  Section-->
+            <section class = "w-[100%] h-[120%] bg-green-800 flex flex-col justify-center items-center gap-[1rem] px-[2rem]">
+
+                <!-- *Slider Title -->
+                <h2 class = "text-[3rem] font-semibold">Trending this week:</h2>
+
+                <!-- *Slider Text -->
+                <p class = "font-semibold text-[0.9rem] w-[40%] h-fit text-center">
+
+                    Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deserunt culpa illum aliquid veniam obcaecati asperiores natus, nostrum illo, voluptatem consequuntur eveniet, ad inventore dolorum officia exercitationem velit! Illo, placeat.
+
+                </p>
+
+                <main class="h-fit w-fit items-center ">
+
+                    <div x-data="imageSlider" class="relative max-w-2xl overflow-hidden rounded-md p-2 sm:p-4">
+                
+                            <!-- Slider Button  -->
+                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
+                            <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
+                        </button>
+                
+                            <!-- Slider Button -->
+                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
+                            <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
+                        </button>
+                
+
+                        <div class="" style="width: 350px; height: 550px;">
+
+                            <template x-for="(image, index) in images">
+
+                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="top-0">
+
+                                    <img :src="image" alt="image" class="rounded-sm sliderImage" />
+
+                                </div>
+
+                            </template>
+
+                        </div>
+
+                    </div>
+
+                </main> 
+
+            </section>
+
 
         </div>
 
