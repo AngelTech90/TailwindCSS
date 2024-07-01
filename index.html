@@ -176,7 +176,7 @@
                     <!-- Carousel 2 -->
                     <div class = "w-[100%] h-[280px] bg-red-500 overflow-hidden carouselContainer">
 
-                        <div class = "slide w-[140%] h-[100%] flex ">
+                        <div class = "slide w-[190%] h-[100%] flex ">
 
                                 <a href="" class="w-fit h-fit imageContainer">
 
@@ -198,11 +198,32 @@
 
                                 <a href="" class="w-fit h-fit imageContainer">
 
+                                    <img src="../assets/images/cover-4.jpg" alt="" class = "carouselImage">
+    
+                                </a>  
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
                                     <img src="../assets/images/cover-5.jpg" alt="" class = "carouselImage " id = "image3">
     
                                 </a>   
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
+                                    <img src="../assets/images/cover-6.jpg" alt="" class = "carouselImage">
+    
+                                </a>  
+
+                                <a href="" class="w-fit h-fit imageContainer">
+
+                                    <img src="../assets/images/cover-7.jpg" alt="" class = "carouselImage">
+    
+                                </a>
+                                
+                                
                                 
                         </div>
+
 
                     </div>
 
@@ -303,59 +324,696 @@
 
 
             <!-- * Slider  Section-->
-            <section class = "w-[100%] h-[120%] bg-green-800 flex flex-col justify-center items-center gap-[1rem] px-[2rem]">
+            <section class = "w-[100%] h-[100%] bg-green-800 flex flex-col justify-start items-center p-[3%] gap-[1rem] px-[2rem]">
 
                 <!-- *Slider Title -->
                 <h2 class = "text-[3rem] font-semibold">Trending this week:</h2>
 
                 <!-- *Slider Text -->
-                <p class = "font-semibold text-[0.9rem] w-[40%] h-fit text-center">
+                <p class = "font-semibold text-[0.8rem] w-[40%] h-fit text-center">
 
                     Lorem ipsum dolor sit, amet consectetur adipisicing elit. Expedita deserunt culpa illum aliquid veniam obcaecati asperiores natus, nostrum illo, voluptatem consequuntur eveniet, ad inventore dolorum officia exercitationem velit! Illo, placeat.
 
                 </p>
 
-                <main class="h-fit w-fit items-center sliderMain">
+                <!-- * Sliders container -->
+                <div class = "w-[100%] h-fit flex justify-center items-center gap-[1rem]">
 
-                    <div x-data="imageSlider" class="relative max-w-2xl overflow-hidden rounded-md p-2 sm:p-4">
+                        <!-- * Slider component -->
+                    <main class="h-fit w-fit items-center sliderMain">
+
+                        <div x-data="imageSlider" x-init="
+
+                            let setAnimation1, setAnimation2;
+
+                            function animation1(){
+
+                                setAnimation1 = setInterval(() => {
+
+                                    forward();
+
+                                    if(currentIndex == images.length){
+
+                                        clearInterval(setAnimation1);
+
+                                        animation2();
+
+                                    }
+
+                                }, 2500);
+
+                            }
+
+                            function animation2(){
+
+                                    setAnimation2 = setInterval(() => {
+            
+                                        previous();                                   
+
+                                        if(currentIndex == 1){
+
+                                            clearInterval(setAnimation2);
+
+                                            animation1();
+
+                                        }
+
+                                    }, 2500);
+                                    
+                            }
+
+                            setTimeout(() => {
+
+                                animation1();
+                                
+                            }, 1000);
+                        
+
+                        
+                        " class="relative max-w-2xl overflow-hidden rounded-md p-2 sm:p-4">    
+
+                            <div class="" style="width: 250px; height: 400px;">
+
+                                <template x-for="(image, index) in images" x>
+
+                                    <div x-show="currentIndex  == index + 1" x-transition:enter="transition transform duration-10" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-10" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="top-0">
+
+                                        <a href="#">
+                                            <img :src="image" alt="image" class="rounded-sm sliderImage" />
+                                        </a>
+                                    </div>
+
+                                </template>
+
+                            </div>
+
+                        </div>
+
+                    </main> 
+
+                    <!-- * Slider component -->
+                    <main class="h-fit w-fit items-center sliderMain">
+
+                        <div x-data="imageSlider" x-init="
+
+                            let setAnimation1, setAnimation2;
+
+                            function animation1(){
+
+                                setAnimation1 = setInterval(() => {
+
+                                    forward();
+
+                                    if(currentIndex == images.length){
+
+                                        clearInterval(setAnimation1);
+
+                                        animation2();
+
+                                    }
+
+                                }, 2500);
+                                    
+                            }
+
+                            function animation2(){
+
+                                setAnimation2 = setInterval(() => {
+
+                                previous();
+
+                                if(currentIndex == 1){
+
+                                    clearInterval(setAnimation2);
+
+                                    animation1();
+
+                                }
+
+                                }, 2500);
+                                    
+                            }
+
+                            setTimeout(() => {
+
+                                animation1();
+
+                            }, 2000);
+                        
+                        " class="relative max-w-2xl overflow-hidden rounded-md p-2 sm:p-4">    
+
+                            <div class="" style="width: 250px; height: 400px;">
+
+                                <template x-for="(image, index) in images2" x>
+
+                                    <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-10" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-10" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="top-0">
+
+                                        <a href="#">
+                                            <img :src="image" alt="image" class="rounded-sm sliderImage" />
+                                        </a>
+                                    </div>
+
+                                </template>
+
+                            </div>
+
+                        </div>
+
+                    </main> 
+
+                    <!-- * Slider component -->
+                    <main class="h-fit w-fit items-center sliderMain">
+
+                        <div x-data="imageSlider" x-init="
+
+                            let setAnimation1, setAnimation2;
+
+                            function animation1(){
+
+                                setAnimation1 = setInterval(() => {
+
+                                    forward();                      
+
+                                    if(currentIndex == images.length){
+
+                                        clearInterval(setAnimation1);
+
+                                        animation2();
+
+                                    }
+
+                                }, 2500);
+
+                            }
+
+                            function animation2(){
+
+                                setAnimation2 = setInterval(() => {
+
+                                    previous();
+
+                                    if(currentIndex == 1){
+
+                                        clearInterval(setAnimation2);
+
+                                        animation1();
+
+                                    }
+
+                                }, 2500);
+
+                            }
+
+
+                            setTimeout(() => {
+
+                                animation1();
+
+                            }, 3000);
+                            
+                        
+
+                        
+                        " class="relative max-w-2xl overflow-hidden rounded-md p-2 sm:p-4">    
+
+                            <div class="" style="width: 250px; height: 400px;">
+
+                                <template x-for="(image, index) in images3" x>
+
+                                    <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-10" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-10" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="top-0">
+
+                                        <a href="#">
+                                            <img :src="image" alt="image" class="rounded-sm sliderImage" />
+                                        </a>
+                                    </div>
+
+                                </template>
+
+                            </div>
+
+                        </div>
+
+                    </main> 
+
+                </div>
                 
-                            <!-- Slider Button  -->
-                        <button @click="previous()" class="absolute left-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-left text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
-                            <!-- Slider Button -->
-                        <button @click="forward()" class="absolute right-5 top-1/2 z-10 flex h-11 w-11 -translate-y-1/2 items-center justify-center rounded-full bg-gray-100 shadow-md">
-                            <i class="fas fa-chevron-right text-2xl font-bold text-gray-500"></i>
-                        </button>
-                
 
-                        <div class="" style="width: 350px; height: 550px;">
+            </section>
 
-                            <template x-for="(image, index) in images" >
+            <!-- *Ranked books section -->
+            <section class = "w-[100%] h-[95%] py-[5%] flex flex-col items-center bg-blue-700 pt-[4%] overflow-hidden rankedBooksSection p-[5%]">
 
-                                <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="top-0">
+                <h2 class = "w-[100%] h-fit text-[2.5rem] font-semibold text-start">Top 10 this month</h2>
 
-                                    <img :src="image" alt="image" class="rounded-sm sliderImage" />
+                <!-- * Ranked books container: -->
+                <div class = "w-[100%] h-[90%] flex items-center gap-[1rem]">
+
+
+                    <!-- * Ranked book card: -->
+                    <div class = "rankedBookContainer">
+
+                        <!-- * Card image: -->
+                        <a href="#">
+
+                            <img src="./assets/images/cover-1.jpg" alt="" class = "rankedImageBook">
+
+                        </a>
+                        
+                        <!-- * Starts of books review -->
+                        <div class = "w-[100%] h-fit flex justify-center">
+
+                            <!-- *start 1: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 2: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 3: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 4: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 5: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                        </div>
+
+                        <!-- * Book name -->
+                        <h2 class = "bookName">
+
+                            Book name
+
+                        </h2>
+
+                        <!-- * Autor name -->
+                        <h2 class = "autorTitle">
+
+                            Autor name
+
+                        </h2>
+
+                        <!-- *Price and buy container: -->
+                        <div class = "priceContainer">
+
+                            <section class = "priceTitleSection">
+
+                                <h2 class = "priceTitle">$20.00</h2>
+                                <p class = "priceWithTax">Tax</p>
+
+                            </section>
+
+                            <section class  = "priceIconSection">
+
+                                <div class = "buyIconContainer">
+
+                                <a href="#">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    
+                                </a>
 
                                 </div>
 
-                            </template>
+                            </section>
 
                         </div>
 
                     </div>
 
-                </main> 
+                    <!-- * Ranked book card: -->
+                    <div class = "rankedBookContainer">
 
-            </section>
+                        <!-- * Card image: -->
+                        <a href="#">
 
+                            <img src="./assets/images/cover-2.jpg" alt="" class = "rankedImageBook">
 
-            <!-- *Ranked books section -->
-            <section class = "w-[100%] h-[65%] bg-blue-700 pt-[4%]">
+                        </a>
+                        
+                        <!-- * Starts of books review -->
+                        <div class = "w-[100%] h-fit flex justify-center">
 
-                <h2 class = "w-[100%] h-fit text-[2.5rem] font-semibold text-start pl-[5%]">Top 10 this month</h2>
+                            <!-- *start 1: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
 
+                            <!-- *start 2: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 3: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 4: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 5: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                        </div>
+
+                        <!-- * Book name -->
+                        <h2 class = "bookName">
+
+                            Book name
+
+                        </h2>
+
+                        <!-- * Autor name -->
+                        <h2 class = "autorTitle">
+
+                            Autor name
+
+                        </h2>
+
+                        <!-- *Price and buy container: -->
+                        <div class = "priceContainer">
+
+                            <section class = "priceTitleSection">
+
+                                <h2 class = "priceTitle">$20.00</h2>
+                                <p class = "priceWithTax">Tax</p>
+
+                            </section>
+
+                            <section class  = "priceIconSection">
+
+                                <div class = "buyIconContainer">
+
+                                <a href="#">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    
+                                </a>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                    <!-- * Ranked book card: -->
+                    <div class = "rankedBookContainer">
+
+                        <!-- * Card image: -->
+                        <a href="#">
+
+                            <img src="./assets/images/cover-3.jpg" alt="" class = "rankedImageBook">
+
+                        </a>
+                        
+                        <!-- * Starts of books review -->
+                        <div class = "w-[100%] h-fit flex justify-center">
+
+                            <!-- *start 1: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 2: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 3: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 4: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 5: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                        </div>
+
+                        <!-- * Book name -->
+                        <h2 class = "bookName">
+
+                            Book name
+
+                        </h2>
+
+                        <!-- * Autor name -->
+                        <h2 class = "autorTitle">
+
+                            Autor name
+
+                        </h2>
+
+                        <!-- *Price and buy container: -->
+                        <div class = "priceContainer">
+
+                            <section class = "priceTitleSection">
+
+                                <h2 class = "priceTitle">$20.00</h2>
+                                <p class = "priceWithTax">Tax</p>
+
+                            </section>
+
+                            <section class  = "priceIconSection">
+
+                                <div class = "buyIconContainer">
+
+                                <a href="#">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    
+                                </a>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                    <!-- * Ranked book card: -->
+                    <div class = "rankedBookContainer">
+
+                        <!-- * Card image: -->
+                        <a href="#">
+
+                            <img src="./assets/images/cover-4.jpg" alt="" class = "rankedImageBook">
+
+                        </a>
+                        
+                        <!-- * Starts of books review -->
+                        <div class = "w-[100%] h-fit flex justify-center">
+
+                            <!-- *start 1: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 2: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 3: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 4: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 5: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                        </div>
+
+                        <!-- * Book name -->
+                        <h2 class = "bookName">
+
+                            Book name
+
+                        </h2>
+
+                        <!-- * Autor name -->
+                        <h2 class = "autorTitle">
+
+                            Autor name
+
+                        </h2>
+
+                        <!-- *Price and buy container: -->
+                        <div class = "priceContainer">
+
+                            <section class = "priceTitleSection">
+
+                                <h2 class = "priceTitle">$20.00</h2>
+                                <p class = "priceWithTax">Tax</p>
+
+                            </section>
+
+                            <section class  = "priceIconSection">
+
+                                <div class = "buyIconContainer">
+
+                                <a href="#">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    
+                                </a>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                    <!-- * Ranked book card: -->
+                    <div class = "rankedBookContainer">
+
+                        <!-- * Card image: -->
+                        <a href="#">
+
+                            <img src="./assets/images/cover-5.jpg" alt="" class = "rankedImageBook">
+
+                        </a>
+                        
+                        <!-- * Starts of books review -->
+                        <div class = "w-[100%] h-fit flex justify-center">
+
+                            <!-- *start 1: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 2: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 3: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 4: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 5: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                        </div>
+
+                        <!-- * Book name -->
+                        <h2 class = "bookName">
+
+                            Book name
+
+                        </h2>
+
+                        <!-- * Autor name -->
+                        <h2 class = "autorTitle">
+
+                            Autor name
+
+                        </h2>
+
+                        <!-- *Price and buy container: -->
+                        <div class = "priceContainer">
+
+                            <section class = "priceTitleSection">
+
+                                <h2 class = "priceTitle">$20.00</h2>
+                                <p class = "priceWithTax">Tax</p>
+
+                            </section>
+
+                            <section class  = "priceIconSection">
+
+                                <div class = "buyIconContainer">
+
+                                <a href="#">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    
+                                </a>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                    <!-- * Ranked book card: -->
+                    <div class = "rankedBookContainer">
+
+                        <!-- * Card image: -->
+                        <a href="#">
+
+                            <img src="./assets/images/cover-6.jpg" alt="" class = "rankedImageBook">
+
+                        </a>
+                        
+                        <!-- * Starts of books review -->
+                        <div class = "w-[100%] h-fit flex justify-center">
+
+                            <!-- *start 1: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 2: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 3: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 4: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                            <!-- *start 5: -->
+                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+
+                        </div>
+
+                        <!-- * Book name -->
+                        <h2 class = "bookName">
+
+                            Book name
+
+                        </h2>
+
+                        <!-- * Autor name -->
+                        <h2 class = "autorTitle">
+
+                            Autor name
+
+                        </h2>
+
+                        <!-- *Price and buy container: -->
+                        <div class = "priceContainer">
+
+                            <section class = "priceTitleSection">
+
+                                <h2 class = "priceTitle">$20.00</h2>
+                                <p class = "priceWithTax">Tax</p>
+
+                            </section>
+
+                            <section class  = "priceIconSection">
+
+                                <div class = "buyIconContainer">
+
+                                <a href="#">
+
+                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                    </svg>
+                                    
+                                </a>
+
+                                </div>
+
+                            </section>
+
+                        </div>
+
+                    </div>
+
+                </div>
 
 
             </section>
@@ -364,6 +1022,27 @@
             <!-- *Best sellers section -->
             <section class = "w-[100%] h-[45%] bg-yellow-300">
 
+                <!-- * Selled book card: -->
+                <div class = "selledBookContainer">
+
+                    <section class  = "sellSection">
+
+                        <img src="./assets/images/cover-1.jpg" alt="" class = "selledBookIImage">
+
+                    </section>
+
+                    <section class  = "sellSection">
+
+                        <a href="#" class  = "categorieLink"></a>
+
+                        <div class = "starScore">
+
+
+                        </div>
+
+                    </section>
+
+                </div>
 
             </section>
 
@@ -440,45 +1119,66 @@
 <script>
         document.addEventListener("alpine:init", () => {
 
-                    Alpine.data("imageSlider", () => ({
+                Alpine.data("imageSlider", () => (
+                        
+                    {
 
-                        currentIndex: 1,
+                        currentIndex:1,
 
                             images: [
-                                "../assets/images/cover-1.jpg",
-                                "../assets/images/cover-2.jpg",
-                                "../assets/images/cover-3.jpg",
-                                "../assets/images/cover-5.jpg"
+                                "./assets/images/cover-1.jpg",
+                                "./assets/images/cover-2.jpg",
+                                "./assets/images/cover-3.jpg",
+                                "./assets/images/cover-4.jpg",
+                                "./assets/images/cover-5.jpg",
+                                "./assets/images/cover-6.jpg",
+                                "./assets/images/cover-7.jpg",
+                                "./assets/images/cover-8.jpg"
                             ],
 
-                            previous() {
+                            images2: [
+                                "./assets/images/cover-9.jpg",
+                                "./assets/images/cover-10.jpg",
+                                "./assets/images/cover-11.jpg",
+                                "./assets/images/cover-12.jpg",
+                                "./assets/images/cover-13.jpg",
+                                "./assets/images/cover-14.jpg",
+                                "./assets/images/cover-15.jpg",
+                                "./assets/images/cover-16.png"
 
-                                if (this.currentIndex > 1) {
+                            ],
 
-                                    this.currentIndex = this.currentIndex - 1;
+                            images3: [
+                                "./assets/images/cover-17.jpg",
+                                "./assets/images/cover-18.jpg",
+                                "./assets/images/cover-19.jpg",
+                                "./assets/images/cover-20.jpg",
+                                "./assets/images/cover-21.jpg",
+                                "./assets/images/cover-22.jpg",
+                                "./assets/images/cover-23.jpg",
+                                "./assets/images/cover-24.jpg"
+                            ],
 
-                                    setInterval(console.log('julio'),4000)
+                            previous(relativeIndex) {
 
-                                }
+                                this.currentIndex = this.currentIndex - 1;
 
                             },
 
-                            forward() {
-
-                                if (this.currentIndex < this.images.length) {
-
-                                    this.currentIndex = this.currentIndex + 1;
-
-                                    console.log('jose')
-
-                                }
+                            forward(relativeIndex) {
+    
+                                this.currentIndex = this.currentIndex + 1;
 
                             },
-                        }
+                        
+                    }
+
                     )
                 );
+
             }
         );
+
 
 
 </script>
@@ -505,7 +1205,7 @@
 
                                     <template x-for="(image, index) in images">
 
-                                        <div x-show="currentIndex == index + 1" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
+                                        <div x-show="currentIndex == index" x-transition:enter="transition transform duration-300" x-transition:enter-start="opacity-0" x-transition:enter-end="opacity-100" x-transition:leave="transition transform duration-300" x-transition:leave-start="opacity-100" x-transition:leave-end="opacity-0" class="absolute top-0">
 
                                             <img :src="image" alt="image" class="rounded-sm carouselImage" />
 

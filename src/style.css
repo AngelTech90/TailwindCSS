@@ -53,14 +53,14 @@
     from
     {
 
-        transform: translateX(-83%);
+        transform: translateX(-99.8%);
 
     }
 
     to
     {
 
-        transform: translateX(72%);
+        transform: translateX(49.8%);
 
     }
 
@@ -75,6 +75,14 @@
     margin-top: 20px;
 
     margin-bottom: 20px;
+
+    transition: all 300ms;
+
+}
+
+.carouselImage:hover{
+
+    scale: 1.05;
 
 }
 
@@ -111,9 +119,10 @@
 
 .slide{
 
-    animation: 20s slide linear infinite;
+    animation: 25s slide linear infinite;
 
 }
+
 
 
 .slide:hover{
@@ -126,7 +135,6 @@
 .imageContainer{
 
     margin-left: 1.5rem;
-
 }
 
 
@@ -225,8 +233,168 @@
 
 .sliderImage{
 
-    width: 350px;
+    width: 250px;
 
-    height: 550px;
+    height: 400px;
+    
+    transition: all 300ms;
+
+}
+
+.sliderImage:hover{
+
+    scale: 1.03;
+
+}
+
+
+.rankedImageBook{
+
+    width: 150px;
+    height: 250px;
+
+    transition: all 300ms;
+
+}
+
+.rankedImageBook:hover{
+
+    scale: 1.04;
+
+}
+
+
+.rankedBookContainer{
+
+    width: 180px;
+    height: 420px;
+
+    display: flex;
+
+    align-items: center;
+
+    flex-flow: column;
+
+    background-color: whitesmoke;
+
+    padding-top: 1rem;
+    padding-bottom: 1rem;
+
+}
+
+
+.cardStarIcon{
+
+    width: 1.5rem;
+    height: 1.5rem;
+
+    transition: all 200ms;
+
+}
+
+.cardStarIcon:hover{
+
+    scale: 1.3;
+
+}
+
+
+.bookName{
+
+    font-weight: 600;
+
+    font-size: 1.5rem;
+
+}
+
+
+.autorName{
+
+    font-weight: 400;
+    font-size: 1rem;
+
+}
+
+
+.priceContainer{
+
+    display: flex;
+    width: 90%;
+    height: fit-content;
+
+    background-color: red;
+
+    border-radius: 1rem;
+
+}
+
+
+.priceTitleSection{
+
+    display: flex;
+    flex-flow: column;
+
+    align-items: center;
+
+    width: 50%;
+    height: 100%;
+
+}
+
+
+.priceTitle{
+
+    font-weight: 700;
+    font-size: 1.2rem;
+
+}
+
+
+.priceWithTax{
+
+    font-size: 1rem;
+    font-weight: 400;
+
+}
+
+
+.priceIconSection{
+
+    display: flex;
+
+    flex-flow: column;
+
+    align-items: center;
+
+    justify-content: center;
+
+    width: 50%;
+    height: 100%;
+
+}
+
+
+.buyIconContainer{
+
+    width: 2.5rem;
+    height: 2.5rem;
+
+    display: flex;
+
+    justify-content: center;
+
+    align-items: center;
+
+    border-radius: 100%;
+
+    background-color: wheat;
+
+    transition: all 250ms;
+
+}
+
+.buyIconContainer:hover{
+    
+    scale: 1.1;
 
 }
