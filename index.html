@@ -1541,7 +1541,7 @@
                         <!--  * Book image container -->
                         <section class = "w-[40%] h-[100%] flex justify-center items-center">
 
-                            <img src="./assets/images/cover-13.jpg" alt="" class = "w-[150px] h-[210px]">
+                            <img src="./assets/images/cover-19.jpg" alt="" class = "w-[150px] h-[210px]">
 
                         </section>
 
@@ -1549,7 +1549,7 @@
                         <section class = "w-[60%] h-[100%] flex-col">
 
                             <!-- * Categories and rating container: -->
-                            <div class = " w-[100%] h-[5%] mt-[5%] pl-[5%] flex justify-start items-center gap-[7%] ">
+                            <div class = " w-[100%] h-[15%] my-[5%] flex justify-start items-center gap-[7%] ">
                             
                                 <!-- *Link for categorie: -->
                                 <a href="#" class = "hover:text-white transition-all-[300ms] text-[1.2rem] font-semibold w-fit h-fit bg-[green] rounded-md box-border px-[5%]">Categorie</a>
@@ -1584,30 +1584,31 @@
                             </div>
 
                             <!-- *Title of the book -->
-                            <h2 class = "w-[100%] h-[5%] flex text-[1.7rem] font-semibold justify-start items-start"> Book description title</h2>
+                            <h2 class = "w-[100%] h-[10%] flex text-[1.7rem] font-semibold justify-start items-end"> Book description title</h2>
 
                             <!-- *Book description container: -->
-                            <div class = "w-[100%] h-[25%] flex items-center">
+                            <div class = "w-[100%] h-[25%] pt-[5%] flex justify-start items-center">
 
-                                <p class = "text-[0.6rem] font-bold w-fit h-fit">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellat architecto corrupti minus quasi fugit, expedita beatae placeat.</p>
+                                <p class = "text-[0.7rem] font-bold w-fit h-fit">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellat architecto corrupti minus quasi fugit, expedita beatae placeat.</p>
 
                             </div>
 
                             <!-- * price and price with tax container -->
-                            <div class = "w-[100%] h-[25%] flex items-center justify-start">
+                            <div class = "w-[100%] h-[25%] mb-[4%] flex items-center justify-start">
 
                                 <!-- * price --> 
                                 <p class = "text-[2rem] font-bold w-fit h-fit">$20.00</p>
                                 
                                 <!-- * price with tax-->
-                                <span class = "text-[1.2rem] font-semibold w-fit h-fit mt-[3%]">$20.00</span>
+                                <span class = "text-[1.2rem] flex items-center font-semibold w-fit h-fit mt-[3%]">$20.00</span>
 
                             </div>
 
                             <!-- * Shop button, like and more details container -->
-                            <div class = " w-[100%] h-[35%] flex">
+                            <div class = " w-[100%] h-[20%] flex items-start gap-[2%]">
 
-                                <button class = "flex items-center gap-[3%] bg-violet-700 font-semibold px-[2%] w-fit h-[35%] rounded-lg text-white hover:scale-[1.05] duration-300 text-[0.8rem]">
+                                <!-- * Add to shop car button -->
+                                <button class = "flex items-center gap-[5%] bg-violet-700 font-semibold px-[2%] w-[50%] h-[45%] rounded-lg text-white hover:scale-[1.05] duration-300 text-[0.8rem]">
 
                                     Add to shop car
 
@@ -1620,10 +1621,28 @@
                                         </svg>
 
                                     </a>
-                                    
 
                                 </button>
 
+                                <!-- *Give like to featured book button -->
+                                <button class = "w-[13%] h-[45%] bg-white flex items-center justify-center text-center hover:scale-[1.05] transition-all duration-300 rounded-lg">
+
+                                    <a href="" class = "w-fit h-fit">
+
+                                        <svg viewBox="0 -2 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "size-5"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path fill-rule="evenodd" clip-rule="evenodd" d="M18.2627 26.9922L29.2549 16C31.085 14.1699 32 11.9607 32 9.37258C32 6.78442 31.085 4.57528 29.2549 2.74517C27.4247 0.915055 25.2155 0 22.6274 0C20.0392 0 17.8301 0.915055 16 2.74517C14.1699 0.915055 11.9607 0 9.37258 0C6.78442 0 4.57528 0.915055 2.74517 2.74517C0.915056 4.57528 0 6.78442 0 9.37258C0 11.9607 0.915056 14.1699 2.74517 16L13.7373 26.9922C14.9869 28.2418 17.0131 28.2418 18.2627 26.9922Z" fill="url(#paint0_radial_103_1602)"></path> <defs> <radialGradient id="paint0_radial_103_1602" cx="0" cy="0" r="1" gradientUnits="userSpaceOnUse" gradientTransform="translate(8.07998 9.66157) rotate(59.8757) scale(18.7297 20.4872)"> <stop stop-color="#FFAA00"></stop> <stop offset="1" stop-color="#F05206"></stop> </radialGradient> </defs> </g></svg>
+
+
+                                    </a>
+                                    
+                                </button>
+
+                                <!-- *See more details link: -->
+                                <div class = "flex items-center justify-center w-[27%] h-[45%]">
+
+                                    <a href="#" class = "w-fit h-fit font-bold text-[0.8rem]">View details</a>
+
+                                </div>
+                                
                             </div>
 
                         </section>
@@ -1639,6 +1658,15 @@
             <!-- *News Section -->
             <section class = "w-[100%] h-[90%] bg-green-400">
 
+                <!-- * Container for text and title of news section -->
+                <div class = "w-[100%] h-[20%] flex flex-col items-center justify-center gap-[2%]">
+
+                    <h2 class  = "text-[2.1rem] font-bold">Latest news</h2>
+
+                    <p class = "w-[45%] h-fit text-[1.1rem] font-light">Lorem ipsum dolor sit amet consectetur adipisicing elit. Ratione ullam illo debitis ea natus ipsam maxime accusantium at rem voluptatum excepturi, consequuntur officiis unde nemo iste cumque suscipit nostrum molestias.</p>
+
+                </div>
+                
                 
 
             </section>
