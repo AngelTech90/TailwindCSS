@@ -568,3 +568,63 @@
     font-size: 0.7rem;
 
 }
+
+
+.testimonialImage2{
+
+    z-index: 2;
+
+    position: absolute;
+
+    margin-left: 28px;
+
+}
+
+.testimonialImage3{
+
+    z-index: 3;
+
+    position: absolute;
+
+    margin-left: 56px;
+
+}
+
+.testimonialImage4{
+
+    z-index: 4;
+
+    position: absolute;
+        
+    margin-left: 74px;
+
+}
+
+.testimonialImage5{
+
+    z-index: 5;
+
+    position: absolute;
+    
+    margin-left: 102px;
+
+}
+
+.testimonialImage6{
+
+    z-index: 6;
+
+    position: absolute;
+
+    margin-left: 130px;
+
+}
+
+
+.writterImage{
+
+    z-index: 2;
+
+    position: absolute;
+
+}
