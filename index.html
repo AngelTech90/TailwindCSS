@@ -4,16 +4,16 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
-    <link rel="stylesheet" href="./src/output.css">
+    <link rel="stylesheet" href="./src/Tailwind/output.css">
 
-    <script src="./src/function.js" defer></script>
-
-    <link rel="stylesheet" href="./src/style.css">
+    <link rel="stylesheet" href="./src/CSS/style.css">
 
     <script defer src="https://cdn.jsdelivr.net/npm/alpinejs@3.x.x/dist/cdn.min.js"></script>
+    <script src="./src/JS/main.js" defer></script>
 
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css">
 
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.4/css/all.css">
 
     <title>AngelReads</title>
 
@@ -123,7 +123,7 @@
                 <section class = "w-[40%] h-[100%] flex justify-center items-center "> 
 
                     <!-- *Info box -->
-                    <div class = "w-[90%] h-[70%] bg-infoBox-color shadow-lg shadow-gray-300 flex flex-col items-center p-[1rem] gap-[1.5rem] text-white ">
+                    <div class = "w-[90%] h-[70%] bg-infoBox-color shadow-lg shadow-gray-300 flex flex-col items-center p-[1rem] gap-[1.5rem] text-white rounded-xl">
 
                         <h2 class = "w-fit fit text-center text-white text-[3rem] infoBoxTitle">Title of Box</h2>
                         
@@ -171,7 +171,7 @@
                 <!-- *Section 2 -->
                 <section class = "w-[60%] h-[100%] flex justify-center items-center  carouselContainer bg-white">
 
-                <h2 class = "w-fit h-fit text-[4rem] text-black flex justify-self-start" id = "bookTitle">Popular Books</h2> 
+                <h2 class = "w-fit h-fit text-[4rem] text-black flex justify-self-start font-semibold" id = "bookTitle">Popular Books</h2> 
 
                     <!-- Carousel 2 -->
                     <div class = "w-[100%] h-[280px] bg-red-500 overflow-hidden carouselContainer">
@@ -561,678 +561,2087 @@
             </section>
 
             <!-- *Ranked books section -->
-            <section class = "w-[100%] h-[95%] py-[5%] flex flex-col items-center bg-blue-700 pt-[4%] overflow-hidden rankedBooksSection p-[5%]">
+            <section class = "w-[100%] h-[95%] py-[5%] flex flex-col items-center bg-blue-700 pt-[4%] overflow-hidden rankedBooksSection px-[2.5%]">
 
-                <h2 class = "w-[100%] h-fit text-[2.5rem] font-semibold text-start">Top 10 this month</h2>
+                <h2 class = "w-[100%] h-[5%] text-[2.5rem] font-semibold text-start">Top 10 this month</h2>
 
-                <!-- * Ranked books container: -->
-                <div class = "w-[100%] h-[90%] flex items-center gap-[1rem]">
+                <div class = "w-[100%] h-[95%] overflow-hidden flex flex-nowrap items-center" id = "rankedBookSlider">
+                    
+                    <div id="rankedBookSlide" class = "bookSlide space-y-4">
 
+                        <button class = "sliderButton" id = "leftButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
 
-                    <!-- * Ranked book card: -->
-                    <div class = "rankedBookContainer">
-
-                        <!-- * Card image: -->
-                        <a href="#">
-
-                            <img src="./assets/images/cover-1.jpg" alt="" class = "rankedImageBook">
-
-                        </a>
-                        
-                        <!-- * Starts of books review -->
-                        <div class = "w-[100%] h-fit flex justify-center">
-
-                            <!-- *start 1: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 2: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 3: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 4: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 5: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                        </div>
-
-                        <!-- * Book name -->
-                        <h2 class = "bookName">
-
-                            Book name
-
-                        </h2>
-
-                        <!-- * Autor name -->
-                        <h2 class = "autorTitle">
-
-                            Autor name
-
-                        </h2>
-
-                        <!-- *Price and buy container: -->
-                        <div class = "priceContainer">
-
-                            <section class = "priceTitleSection">
-
-                                <h2 class = "priceTitle">$20.00</h2>
-                                <p class = "priceWithTax">Tax</p>
-
-                            </section>
-
-                                                        
-                            <!-- * Price icon section -->
-                            <section class  = "priceIconSection">
-
-                                <!-- * Container for buy icon -->
-                                <div class = "buyIconContainer">
-
-                                <!-- * Buy icon -->
+                        <!-- * Ranked books container: -->
+                        <div class = "w-[100%] h-[95%] flex items-center gap-[1rem]">
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
                                 <a href="#">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                    </svg>
-                                    
+    
+                                    <img src="./assets/images/cover-1.jpg" alt="" class = "rankedImageBook">
+    
                                 </a>
-
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
                                 </div>
-
-                            </section>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+    
+                                                                
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-2.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-3.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-4.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-5.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-6.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
 
                         </div>
+
+                        <button class = "sliderButton" id = "rightButton">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
 
                     </div>
+    
+                    <div id="rankedBookSlide2" class = "bookSlide space-y-4">
 
-                    <!-- * Ranked book card: -->
-                    <div class = "rankedBookContainer">
+                        <button class = "sliderButton" id = "leftButton2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
 
-                        <!-- * Card image: -->
-                        <a href="#">
-
-                            <img src="./assets/images/cover-2.jpg" alt="" class = "rankedImageBook">
-
-                        </a>
-                        
-                        <!-- * Starts of books review -->
-                        <div class = "w-[100%] h-fit flex justify-center">
-
-                            <!-- *start 1: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 2: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 3: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 4: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 5: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                        </div>
-
-                        <!-- * Book name -->
-                        <h2 class = "bookName">
-
-                            Book name
-
-                        </h2>
-
-                        <!-- * Autor name -->
-                        <h2 class = "autorTitle">
-
-                            Autor name
-
-                        </h2>
-
-                        <!-- *Price and buy container: -->
-                        <div class = "priceContainer">
-
-                            <section class = "priceTitleSection">
-
-                                <h2 class = "priceTitle">$20.00</h2>
-                                <p class = "priceWithTax">Tax</p>
-
-                            </section>
-                            
-                            <!-- * Price icon section -->
-                            <section class  = "priceIconSection">
-
-                                <!-- * Container for buy icon -->
-                                <div class = "buyIconContainer">
-
-                                <!-- * Buy icon -->
+                        <!-- * Ranked books container: -->
+                        <div class = "w-[100%] h-[95%] flex items-center gap-[1rem]">
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
                                 <a href="#">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                    </svg>
-                                    
+    
+                                    <img src="./assets/images/cover-23.jpg" alt="" class = "rankedImageBook">
+    
                                 </a>
-
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
                                 </div>
-
-                            </section>
-
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+    
+                                                                
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-15.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-11.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-6.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-20.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-14.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
                         </div>
+    
+                        <button class = "sliderButton" id = "rightButton2">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
 
                     </div>
-
-                    <!-- * Ranked book card: -->
-                    <div class = "rankedBookContainer">
-
-                        <!-- * Card image: -->
-                        <a href="#">
-
-                            <img src="./assets/images/cover-3.jpg" alt="" class = "rankedImageBook">
-
-                        </a>
                         
-                        <!-- * Starts of books review -->
-                        <div class = "w-[100%] h-fit flex justify-center">
+                    <div id="rankedBookSlide3" class = "bookSlide space-y-4">
 
-                            <!-- *start 1: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+                        <button class = "sliderButton" id = "leftButton3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
 
-                            <!-- *start 2: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 3: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 4: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 5: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                        </div>
-
-                        <!-- * Book name -->
-                        <h2 class = "bookName">
-
-                            Book name
-
-                        </h2>
-
-                        <!-- * Autor name -->
-                        <h2 class = "autorTitle">
-
-                            Autor name
-
-                        </h2>
-
-                        <!-- *Price and buy container: -->
-                        <div class = "priceContainer">
-
-                            <section class = "priceTitleSection">
-
-                                <h2 class = "priceTitle">$20.00</h2>
-                                <p class = "priceWithTax">Tax</p>
-
-                            </section>
-                            
-                            <!-- * Price icon section -->
-                            <section class  = "priceIconSection">
-
-                                <!-- * Container for buy icon -->
-                                <div class = "buyIconContainer">
-
-                                <!-- * Buy icon -->
+                        <!-- * Ranked books container: -->
+                        <div class = "w-[100%] h-[9%] flex items-center gap-[1rem]">
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
                                 <a href="#">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                    </svg>
-                                    
+    
+                                    <img src="./assets/images/cover-7.jpg" alt="" class = "rankedImageBook">
+    
                                 </a>
-
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
                                 </div>
-
-                            </section>
-
-                        </div>
-
-                    </div>
-
-                    <!-- * Ranked book card: -->
-                    <div class = "rankedBookContainer">
-
-                        <!-- * Card image: -->
-                        <a href="#">
-
-                            <img src="./assets/images/cover-4.jpg" alt="" class = "rankedImageBook">
-
-                        </a>
-                        
-                        <!-- * Starts of books review -->
-                        <div class = "w-[100%] h-fit flex justify-center">
-
-                            <!-- *start 1: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 2: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 3: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 4: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 5: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                        </div>
-
-                        <!-- * Book name -->
-                        <h2 class = "bookName">
-
-                            Book name
-
-                        </h2>
-
-                        <!-- * Autor name -->
-                        <h2 class = "autorTitle">
-
-                            Autor name
-
-                        </h2>
-
-                        <!-- *Price and buy container: -->
-                        <div class = "priceContainer">
-
-                            <section class = "priceTitleSection">
-
-                                <h2 class = "priceTitle">$20.00</h2>
-                                <p class = "priceWithTax">Tax</p>
-
-                            </section>
-                            
-                            <!-- * Price icon section -->
-                            <section class  = "priceIconSection">
-
-                                <!-- * Container for buy icon -->
-                                <div class = "buyIconContainer">
-
-                                <!-- * Buy icon -->
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+    
+                                                                
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
                                 <a href="#">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                    </svg>
-                                    
+    
+                                    <img src="./assets/images/cover-6.jpg" alt="" class = "rankedImageBook">
+    
                                 </a>
-
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
                                 </div>
-
-                            </section>
-
-                        </div>
-
-                    </div>
-
-                    <!-- * Ranked book card: -->
-                    <div class = "rankedBookContainer">
-
-                        <!-- * Card image: -->
-                        <a href="#">
-
-                            <img src="./assets/images/cover-5.jpg" alt="" class = "rankedImageBook">
-
-                        </a>
-                        
-                        <!-- * Starts of books review -->
-                        <div class = "w-[100%] h-fit flex justify-center">
-
-                            <!-- *start 1: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 2: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 3: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 4: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 5: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                        </div>
-
-                        <!-- * Book name -->
-                        <h2 class = "bookName">
-
-                            Book name
-
-                        </h2>
-
-                        <!-- * Autor name -->
-                        <h2 class = "autorTitle">
-
-                            Autor name
-
-                        </h2>
-
-                        <!-- *Price and buy container: -->
-                        <div class = "priceContainer">
-
-                            <section class = "priceTitleSection">
-
-                                <h2 class = "priceTitle">$20.00</h2>
-                                <p class = "priceWithTax">Tax</p>
-
-                            </section>
-                            
-                            <!-- * Price icon section -->
-                            <section class  = "priceIconSection">
-
-                                <!-- * Container for buy icon -->
-                                <div class = "buyIconContainer">
-
-                                <!-- * Buy icon -->
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
                                 <a href="#">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                    </svg>
-                                    
+    
+                                    <img src="./assets/images/cover-2.jpg" alt="" class = "rankedImageBook">
+    
                                 </a>
-
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
                                 </div>
-
-                            </section>
-
-                        </div>
-
-                    </div>
-
-                    <!-- * Ranked book card: -->
-                    <div class = "rankedBookContainer">
-
-                        <!-- * Card image: -->
-                        <a href="#">
-
-                            <img src="./assets/images/cover-6.jpg" alt="" class = "rankedImageBook">
-
-                        </a>
-                        
-                        <!-- * Starts of books review -->
-                        <div class = "w-[100%] h-fit flex justify-center">
-
-                            <!-- *start 1: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 2: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 3: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 4: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                            <!-- *start 5: -->
-                            <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
-
-                        </div>
-
-                        <!-- * Book name -->
-                        <h2 class = "bookName">
-
-                            Book name
-
-                        </h2>
-
-                        <!-- * Autor name -->
-                        <h2 class = "autorTitle">
-
-                            Autor name
-
-                        </h2>
-
-                        <!-- *Price and buy container: -->
-                        <div class = "priceContainer">
-
-                            <section class = "priceTitleSection">
-
-                                <h2 class = "priceTitle">$20.00</h2>
-                                <p class = "priceWithTax">Tax</p>
-
-                            </section>
-                            
-                            <!-- * Price icon section -->
-                            <section class  = "priceIconSection">
-
-                                <!-- * Container for buy icon -->
-                                <div class = "buyIconContainer">
-
-                                <!-- * Buy icon -->
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
                                 <a href="#">
-
-                                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
-                                        <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
-                                    </svg>
-                                    
+    
+                                    <img src="./assets/images/cover-14.jpg" alt="" class = "rankedImageBook">
+    
                                 </a>
-
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
                                 </div>
-
-                            </section>
-
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-9.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
+                            <!-- * Ranked book card: -->
+                            <div class = "rankedBookContainer">
+    
+                                <!-- * Card image: -->
+                                <a href="#">
+    
+                                    <img src="./assets/images/cover-19.jpg" alt="" class = "rankedImageBook">
+    
+                                </a>
+                                
+                                <!-- * Starts of books review -->
+                                <div class = "w-[100%] h-fit flex justify-center">
+    
+                                    <!-- *start 1: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 2: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 3: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 4: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                    <!-- *start 5: -->
+                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45"></path> </g></svg>
+    
+                                </div>
+    
+                                <!-- * Book name -->
+                                <h2 class = "bookName">
+    
+                                    Book name
+    
+                                </h2>
+    
+                                <!-- * Autor name -->
+                                <h2 class = "autorTitle">
+    
+                                    Autor name
+    
+                                </h2>
+    
+                                <!-- *Price and buy container: -->
+                                <div class = "priceContainer">
+    
+                                    <section class = "priceTitleSection">
+    
+                                        <h2 class = "priceTitle">$20.00</h2>
+                                        <p class = "priceWithTax">Tax</p>
+    
+                                    </section>
+                                    
+                                    <!-- * Price icon section -->
+                                    <section class  = "priceIconSection">
+    
+                                        <!-- * Container for buy icon -->
+                                        <div class = "buyIconContainer">
+    
+                                        <!-- * Buy icon -->
+                                        <a href="#">
+    
+                                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                                <path stroke-linecap="round" stroke-linejoin="round" d="M2.25 3h1.386c.51 0 .955.343 1.087.835l.383 1.437M7.5 14.25a3 3 0 0 0-3 3h15.75m-12.75-3h11.218c1.121-2.3 2.1-4.684 2.924-7.138a60.114 60.114 0 0 0-16.536-1.84M7.5 14.25 5.106 5.272M6 20.25a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Zm12.75 0a.75.75 0 1 1-1.5 0 .75.75 0 0 1 1.5 0Z" />
+                                            </svg>
+                                            
+                                        </a>
+    
+                                        </div>
+    
+                                    </section>
+    
+                                </div>
+    
+                            </div>
+    
                         </div>
+
+                        <button class = "sliderButton" id = "rightButton3">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
 
                     </div>
 
                 </div>
-
+                
 
             </section>
 
 
             <!-- *Best sellers section -->
-            <section class = "w-[100%] h-[85%] bg-yellow-300 flex flex-col items-center p-[3%] gap-[1rem]">
+            <section class = "w-[100%] h-[85%] bg-yellow-300 flex flex-col items-center p-[0.3%] gap-[1rem]">
 
-                <h2 class = "w-[94%] h-[3%] flex items-start text-[2.5rem] font-semibold">Best selled</h2>
+                <h2 class = "w-[96%] h-[3%] flex items-start text-[2.5rem] font-semibold">Best selled</h2>
 
-                <div class = "w-[94%] h-[91%] flex items-center gap-[1rem]">
+                <!-- best selled books slider -->
+                <div class = "overflow-hidden flex items-center justify-center w-[90%] h-[97%]" id = "bestSelledSlider">
+
+                    <!-- Slide 1 -->
+                    <div class = "w-[99.6%] h-[91%] flex items-center gap-[1rem] space-y-4 bestSelledBookSlide">
+
+                        <button class = "sliderButton2" id = "leftButton4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
+
+                            <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-11.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
 
                         <!-- * Selled book card: -->
-                    <div class = "selledBookContainer">
+                        <div class = "selledBookContainer">
 
-                        <!-- * Section for the image -->
-                        <section class  = "sellSection1">
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
 
-                            <img src="./assets/images/cover-17.jpg" alt="" class = "selledBookImage">
+                                <img src="./assets/images/cover-4.jpg" alt="" class = "selledBookImage">
 
-                        </section>
+                            </section>
 
-                        <!-- * Section for the categories and the title -->
-                        <section class  = "sellSection2">
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
 
-                            <!-- * Links container -->
-                            <div class = "sellLinksContainer mt-[10%]">
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
 
-                                    <!-- * Categorie Link -->
-                                <a href="#" class  = "categorieLink">
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
 
-                                    Categorie
+                                        Categorie
 
-                                </a>
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
                                 
-                            <!-- * Star score container -->
-                                <div class = "starScore">
-
-                                    <span class = "starSpan">5</span>
-
-                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
 
                                 </div>
-                            
 
-                            </div>
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
 
-                            <!-- * Selled book title -->
-                            <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
-                            <p class = "selledBookAutor ml-[5%]">Book autor</p>
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
 
-                            <!-- * Selled book price -->
-                            <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+                            </section>
 
-                        </section>
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-6.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-20.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <button class = "sliderButton2" id = "rightButton4">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
+
 
                     </div>
 
-                    <!-- * Selled book card: -->
-                    <div class = "selledBookContainer">
+                    <!-- Slide 2 -->
+                    <div class = "w-[99.6%] h-[91%] flex items-center gap-[1rem] space-y-4 bestSelledBookSlide">
 
-                        <!-- * Section for the image -->
-                        <section class  = "sellSection1">
+                        <button class = "sliderButton2" id = "leftButton5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
 
-                            <img src="./assets/images/cover-24.jpg" alt="" class = "selledBookImage">
+                            <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
 
-                        </section>
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
 
-                        <!-- * Section for the categories and the title -->
-                        <section class  = "sellSection2">
+                                <img src="./assets/images/cover-17.jpg" alt="" class = "selledBookImage">
 
-                            <!-- * Links container -->
-                            <div class = "sellLinksContainer mt-[10%]">
+                            </section>
 
-                                    <!-- * Categorie Link -->
-                                <a href="#" class  = "categorieLink">
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
 
-                                    Categorie
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
 
-                                </a>
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
                                 
-                            <!-- * Star score container -->
-                                <div class = "starScore">
-
-                                    <span class = "starSpan">5</span>
-
-                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
 
                                 </div>
-                            
 
-                            </div>
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
 
-                            <!-- * Selled book title -->
-                            <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
-                            <p class = "selledBookAutor ml-[5%]">Book autor</p>
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
 
-                            <!-- * Selled book price -->
-                            <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+                            </section>
 
-                        </section>
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-24.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-11.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-20.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <button class = "sliderButton2" id = "rightButton5">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
+
 
                     </div>
 
-                    <!-- * Selled book card: -->
-                    <div class = "selledBookContainer">
+                    <!-- Slide 3 -->
+                    <div class = "w-[99.6%] h-[91%] flex items-center gap-[1rem] space-y-4 bestSelledBookSlide">
 
-                        <!-- * Section for the image -->
-                        <section class  = "sellSection1">
+                        <button class = "sliderButton2" id = "leftButton6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M10.5 19.5 3 12m0 0 7.5-7.5M3 12h18" />
+                            </svg>
+                        </button>
 
-                            <img src="./assets/images/cover-11.jpg" alt="" class = "selledBookImage">
+                            <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
 
-                        </section>
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
 
-                        <!-- * Section for the categories and the title -->
-                        <section class  = "sellSection2">
+                                <img src="./assets/images/cover-7.jpg" alt="" class = "selledBookImage">
 
-                            <!-- * Links container -->
-                            <div class = "sellLinksContainer mt-[10%]">
+                            </section>
 
-                                    <!-- * Categorie Link -->
-                                <a href="#" class  = "categorieLink">
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
 
-                                    Categorie
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
 
-                                </a>
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
                                 
-                            <!-- * Star score container -->
-                                <div class = "starScore">
-
-                                    <span class = "starSpan">5</span>
-
-                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
 
                                 </div>
-                            
 
-                            </div>
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
 
-                            <!-- * Selled book title -->
-                            <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
-                            <p class = "selledBookAutor ml-[5%]">Book autor</p>
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
 
-                            <!-- * Selled book price -->
-                            <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+                            </section>
 
-                        </section>
+                        </div>
 
-                    </div>
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
 
-                    <!-- * Selled book card: -->
-                    <div class = "selledBookContainer">
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
 
-                        <!-- * Section for the image -->
-                        <section class  = "sellSection1">
+                                <img src="./assets/images/cover-9.jpg" alt="" class = "selledBookImage">
 
-                            <img src="./assets/images/cover-20.jpg" alt="" class = "selledBookImage">
+                            </section>
 
-                        </section>
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
 
-                        <!-- * Section for the categories and the title -->
-                        <section class  = "sellSection2">
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
 
-                            <!-- * Links container -->
-                            <div class = "sellLinksContainer mt-[10%]">
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
 
-                                    <!-- * Categorie Link -->
-                                <a href="#" class  = "categorieLink">
+                                        Categorie
 
-                                    Categorie
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
 
-                                </a>
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
                                 
-                            <!-- * Star score container -->
-                                <div class = "starScore">
-
-                                    <span class = "starSpan">5</span>
-
-                                    <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
 
                                 </div>
-                            
 
-                            </div>
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
 
-                            <!-- * Selled book title -->
-                            <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
-                            <p class = "selledBookAutor ml-[5%]">Book autor</p>
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
 
-                            <!-- * Selled book price -->
-                            <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+                            </section>
 
-                        </section>
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-3.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <!-- * Selled book card: -->
+                        <div class = "selledBookContainer">
+
+                            <!-- * Section for the image -->
+                            <section class  = "sellSection1">
+
+                                <img src="./assets/images/cover-24.jpg" alt="" class = "selledBookImage">
+
+                            </section>
+
+                            <!-- * Section for the categories and the title -->
+                            <section class  = "sellSection2">
+
+                                <!-- * Links container -->
+                                <div class = "sellLinksContainer mt-[10%]">
+
+                                        <!-- * Categorie Link -->
+                                    <a href="#" class  = "categorieLink">
+
+                                        Categorie
+
+                                    </a>
+                                    
+                                <!-- * Star score container -->
+                                    <div class = "starScore">
+
+                                        <span class = "starSpan">5</span>
+
+                                        <svg viewBox="0 -0.5 32 32" fill="none" xmlns="http://www.w3.org/2000/svg" class = "cardStarIcon"><g id="SVGRepo_bgCarrier" stroke-width="0"></g><g id="SVGRepo_tracerCarrier" stroke-linecap="round" stroke-linejoin="round"></g><g id="SVGRepo_iconCarrier"> <path d="M16.0005 0L21.4392 9.27275L32.0005 11.5439L24.8005 19.5459L25.889 30.2222L16.0005 25.895L6.11194 30.2222L7.20049 19.5459L0.000488281 11.5439L10.5618 9.27275L16.0005 0Z" fill="#FFCB45" ></path> </g></svg>
+
+                                    </div>
+                                
+
+                                </div>
+
+                                <!-- * Selled book title -->
+                                <h2 class = "selledBookTitle mt-[20%] ml-[5%]">Book title</h2>
+                                <p class = "selledBookAutor ml-[5%]">Book autor</p>
+
+                                <!-- * Selled book price -->
+                                <h2 class = "selledBookPrice mt-[25%] ml-[5%]">$20.00</h2>
+
+                            </section>
+
+                        </div>
+
+                        <button class = "sliderButton2" id = "rightButton6">
+                            <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="size-6">
+                                <path stroke-linecap="round" stroke-linejoin="round" d="M13.5 4.5 21 12m0 0-7.5 7.5M21 12H3" />
+                            </svg>
+                        </button>
+
 
                     </div>
 
                 </div>
 
             </section>
-
 
             <!-- *Flash sales collection: -->
             <section class = "w-[100%] h-[90%] bg-orange-600 flex">
@@ -1294,14 +2703,14 @@
                 <section class = "w-[60%] h-[100%] flex items-center overflow-hidden">
 
                     <!-- *Sale book card -->
-                    <div class = "w-[400px] h-[230px] bg-rose-600 ml-[2rem] flex">
+                    <div class = "w-[380px] h-[230px] bg-rose-600 ml-[2rem] flex">
 
                         <!-- * Section for book images -->
-                        <section class = "w-[40%] h-[100%] flex items-center justify-center">
+                        <section class = "w-[40%] h-[95%] flex items-center justify-center">
 
                             <a href="#">
 
-                                <img src="./assets/images/cover-13.jpg" alt="" class = "w-[150px] h-[210px] hover:scale-[1.03] transition-all duration-300">
+                                <img src="./assets/images/cover-3.jpg" alt="" class = "w-[150px] h-[210px] hover:scale-[1.03] transition-all duration-300">
 
                             </a>
                             
@@ -1408,7 +2817,7 @@
                     </div>
                     
                     <!-- *Sale book card -->
-                    <div class = "w-[400px] h-[230px] bg-rose-600 ml-[2rem] flex">
+                    <div class = "w-[380px] h-[230px] bg-rose-600 ml-[2rem] flex">
 
                         <!-- * Section for book images -->
                         <section class = "w-[40%] h-[100%] flex items-center justify-center">
@@ -1525,7 +2934,6 @@
 
             </section>
 
-
             <!-- *Featured Book section -->
             <section class = "w-[100%] h-[70%] bg-gray-700 flex flex-col">
 
@@ -1584,12 +2992,12 @@
                             </div>
 
                             <!-- *Title of the book -->
-                            <h2 class = "w-[100%] h-[10%] flex text-[1.7rem] font-semibold justify-start items-end"> Book description title</h2>
+                            <h2 class = "w-[100%] h-[10%] flex text-[1.7rem] font-semibold justify-start items-end mt-[17%]"> Book description title</h2>
 
                             <!-- *Book description container: -->
                             <div class = "w-[100%] h-[25%] pt-[5%] flex justify-start items-center">
 
-                                <p class = "text-[0.7rem] font-bold w-fit h-fit">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellat architecto corrupti minus quasi fugit, expedita beatae placeat.</p>
+                                <p class = "text-[0.8rem] font-bold w-fit h-fit">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Earum repellat architecto corrupti minus quasi fugit, expedita beatae placeat.</p>
 
                             </div>
 
@@ -1605,7 +3013,7 @@
                             </div>
 
                             <!-- * Shop button, like and more details container -->
-                            <div class = " w-[100%] h-[20%] flex items-start gap-[2%]">
+                            <div class = " w-[100%] h-[20%] flex items-start gap-[2%] mt-[-10%]">
 
                                 <!-- * Add to shop car button -->
                                 <button class = "flex items-center gap-[5%] bg-violet-700 font-semibold px-[2%] w-[50%] h-[45%] rounded-lg text-white hover:scale-[1.05] duration-300 text-[0.8rem]">
@@ -1688,14 +3096,14 @@
                         </p>
 
                         <!-- *new writer container  -->
-                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%]" >
+                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%] autorContainer" >
 
                             <img src="./assets/images/news_writers/smart_guy.jpg" alt="" class = "w-[3rem] h-[3rem] rounded-full">
 
                             <div class = "w-fit h-fit flex flex-col items-center">
 
-                                <h2 class = "w-fit h-fit font-semibold text-[0.7rem]">Bob Hamilton</h2>
-                                <p class = "w-fit h-fit font-light text-[0.6rem]">New autor</p>
+                                <h2 class = "w-fit h-fit font-semibold text-[0.8rem]">Bob Hamilton</h2>
+                                <p class = "w-fit h-fit font-light text-[0.7rem]">New autor</p>
 
                             </div>
 
@@ -1720,7 +3128,7 @@
                         </p>
 
                         <!-- *new writer container  -->
-                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%]" >
+                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%] autorContainer" >
 
                             <img src="./assets/images/news_writers/smart_guy.jpg" alt="" class = "w-[3rem] h-[3rem] rounded-full">
 
@@ -1752,7 +3160,7 @@
                         </p>
 
                         <!-- *new writer container  -->
-                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%]" >
+                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%] autorContainer" >
 
                             <img src="./assets/images/news_writers/smart_guy.jpg" alt="" class = "w-[3rem] h-[3rem] rounded-full">
 
@@ -1784,7 +3192,7 @@
                         </p>
 
                         <!-- *new writer container  -->
-                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%]" >
+                        <div class = "bg-red-600 w-[50%] h-[16%] flex items-center gap-[3%] self-start ml-[5%] autorContainer" >
 
                             <img src="./assets/images/news_writers/smart_guy.jpg" alt="" class = "w-[3rem] h-[3rem] rounded-full">
 
@@ -1945,38 +3353,96 @@
 
             </section>
 
-
+            <!-- Footer: -->
             <footer class = "w-[100%] h-[50%] bg-slate-500 flex">
 
                 <!-- * Section for page logo and other features: -->
-                <section class = "w-[30%] h-[100%] flex flex-col items-center p-[3%]">
+                <section class = "w-[25%] h-[100%] flex flex-col items-center pt-[5%] gap-[3%]">
 
                     <!-- *Page logo: -->
                     <a href="#" class ="text-[3rem] text-white hover:text-gray-300 pageLogo" >Angel<span class = "text-span-color hover:text-blue-700 pageLogo">Reads</span></a>
 
                     <!-- * text from logo: -->
-                    <p class = "w-fit h-fit text-[0.9] font-semibold text-start">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, corporis quae? Voluptate quo, earum, doloremque asperiores ipsa ab sit.</p>
+                    <p class = "w-fit h-fit text-[0.9] font-semibold text-start ml-[3%]">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Molestiae, corporis quae? Voluptate quo, earum, doloremque asperiores ipsa ab sit.</p>
+
+                    <!-- Social media container: -->
+                    <div class = "flex gap-[1%] items-center w-[100%] h-fit">
+
+                        <!--Youtube icon -->
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "footerIcon">
+                                <path fill="#FF3D00" d="M43.2,33.9c-0.4,2.1-2.1,3.7-4.2,4c-3.3,0.5-8.8,1.1-15,1.1c-6.1,0-11.6-0.6-15-1.1c-2.1-0.3-3.8-1.9-4.2-4C4.4,31.6,4,28.2,4,24c0-4.2,0.4-7.6,0.8-9.9c0.4-2.1,2.1-3.7,4.2-4C12.3,9.6,17.8,9,24,9c6.2,0,11.6,0.6,15,1.1c2.1,0.3,3.8,1.9,4.2,4c0.4,2.3,0.9,5.7,0.9,9.9C44,28.2,43.6,31.6,43.2,33.9z"></path><path fill="#FFF" d="M20 31L20 17 32 24z"></path>
+                            </svg>
+                        </a>
+                        
+                        <!-- Instagram icon -->
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "footerIcon">
+                                <radialGradient id="yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1" cx="19.38" cy="42.035" r="44.899" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#fd5"></stop><stop offset=".328" stop-color="#ff543f"></stop><stop offset=".348" stop-color="#fc5245"></stop><stop offset=".504" stop-color="#e64771"></stop><stop offset=".643" stop-color="#d53e91"></stop><stop offset=".761" stop-color="#cc39a4"></stop><stop offset=".841" stop-color="#c837ab"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8ma_Xy10Jcu1L2Su_gr1)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><radialGradient id="yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2" cx="11.786" cy="5.54" r="29.813" gradientTransform="matrix(1 0 0 .6663 0 1.849)" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#4168c9"></stop><stop offset=".999" stop-color="#4168c9" stop-opacity="0"></stop></radialGradient><path fill="url(#yOrnnhliCrdS2gy~4tD8mb_Xy10Jcu1L2Su_gr2)" d="M34.017,41.99l-20,0.019c-4.4,0.004-8.003-3.592-8.008-7.992l-0.019-20	c-0.004-4.4,3.592-8.003,7.992-8.008l20-0.019c4.4-0.004,8.003,3.592,8.008,7.992l0.019,20	C42.014,38.383,38.417,41.986,34.017,41.99z"></path><path fill="#fff" d="M24,31c-3.859,0-7-3.14-7-7s3.141-7,7-7s7,3.14,7,7S27.859,31,24,31z M24,19c-2.757,0-5,2.243-5,5	s2.243,5,5,5s5-2.243,5-5S26.757,19,24,19z"></path><circle cx="31.5" cy="16.5" r="1.5" fill="#fff"></circle><path fill="#fff" d="M30,37H18c-3.859,0-7-3.14-7-7V18c0-3.86,3.141-7,7-7h12c3.859,0,7,3.14,7,7v12	C37,33.86,33.859,37,30,37z M18,13c-2.757,0-5,2.243-5,5v12c0,2.757,2.243,5,5,5h12c2.757,0,5-2.243,5-5V18c0-2.757-2.243-5-5-5H18z"></path>
+                            </svg>
+                        </a>
+
+                        <!-- Facebook icon-->
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "footerIcon">
+                                <linearGradient id="Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1" x1="9.993" x2="40.615" y1="9.993" y2="40.615" gradientUnits="userSpaceOnUse"><stop offset="0" stop-color="#2aa4f4"></stop><stop offset="1" stop-color="#007ad9"></stop></linearGradient><path fill="url(#Ld6sqrtcxMyckEl6xeDdMa_uLWV5A9vXIPu_gr1)" d="M24,4C12.954,4,4,12.954,4,24s8.954,20,20,20s20-8.954,20-20S35.046,4,24,4z"></path><path fill="#fff" d="M26.707,29.301h5.176l0.813-5.258h-5.989v-2.874c0-2.184,0.714-4.121,2.757-4.121h3.283V12.46 c-0.577-0.078-1.797-0.248-4.102-0.248c-4.814,0-7.636,2.542-7.636,8.334v3.498H16.06v5.258h4.948v14.452 C21.988,43.9,22.981,44,24,44c0.921,0,1.82-0.084,2.707-0.204V29.301z"></path>
+                            </svg>
+                        </a>
+
+                        <!-- Linkedlin icon -->
+                        <a href="#">
+                            <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="100" height="100" viewBox="0 0 48 48" class = "footerIcon">
+                                <path fill="#0288D1" d="M42,37c0,2.762-2.238,5-5,5H11c-2.761,0-5-2.238-5-5V11c0-2.762,2.239-5,5-5h26c2.762,0,5,2.238,5,5V37z"></path><path fill="#FFF" d="M12 19H17V36H12zM14.485 17h-.028C12.965 17 12 15.888 12 14.499 12 13.08 12.995 12 14.514 12c1.521 0 2.458 1.08 2.486 2.499C17 15.887 16.035 17 14.485 17zM36 36h-5v-9.099c0-2.198-1.225-3.698-3.192-3.698-1.501 0-2.313 1.012-2.707 1.99C24.957 25.543 25 26.511 25 27v9h-5V19h5v2.616C25.721 20.5 26.85 19 29.738 19c3.578 0 6.261 2.25 6.261 7.274L36 36 36 36z"></path>
+                            </svg>
+                        </a>
+                    </div>
 
                 </section>
 
+                <!-- Section for quick links -->
+                <section class = " w-[22.5%] h-[100%] flex flex-col items-center pt-[5%] gap-[3%]">
 
-                <section class = " w-[20%] h-[100%] flex flex-col items-start">
+                    <h3 class = "font-semibold text-[1.3rem]">Quick links:</h3>
 
-
+                    <a href="" class = "footerTitle">About us</a>
+                    <a href="" class = "footerTitle">Contact us</a>
+                    <a href="" class = "footerTitle">Products</a>
+                    <a href="" class = "footerTitle">Login</a>
+                    <a href="" class = "footerTitle">Sign up</a>
 
                 </section>
 
+                <!-- section for Costumer area -->
+                <section class = " w-[22.5%] h-[100%] flex flex-col items-center pt-[5%] gap-[3%]">
 
-                <section class = " w-[20%] h-[100%] flex flex-col items-start">
+                    <h3 class = "font-semibold text-[1.3rem]">Costumer Area</h3>
 
-
+                    <a href="" class = "footerTitle">My account</a>
+                    <a href="" class = "footerTitle">Orders</a>
+                    <a href="" class = "footerTitle">Tracking list</a>
+                    <a href="" class = "footerTitle">Terms</a>
+                    <a href="" class = "footerTitle">Privacy policy</a>
+                    <a href="" class = "footerTitle">FAQ</a>
 
                 </section>
 
+                <!-- Section for subscribe with gmail to newsletter -->
+                <section class = "w-[30%] h-[100%] flex flex-col items-center pt-[5%]">
 
-                <section class = "w-[30%] h-[100%] flex flex-col items-center">
+                    <h3 class = "font-semibold text-[1.3rem] mb-[3%] self-start">Don't miss newest books</h3>
 
+                    <p class = "w-[95%] h-fit text-[0.9rem] mt-[4%]">
+                        Lorem ipsum dolor sit amet, consectetur adipisicing elit. Obcaecati amet consequatur quia reprehenderit quos alias, iusto dignissimos, et minima facilis impedit voluptatum saepe illo magnam! Aspernatur blanditiis itaque minima aliquam.
+                    </p>
 
+                    <div class = "w-[100%] h-[12%] flex mt-[3.5%]">
+
+                        <input type="text" name="" id="" class = "outline-none w-[75%] h-[100%] rounded-full font-semibold">
+
+                        <button class = "w-[23%] mx-[1%] text-white bg-sky-600 rounded-md h-[100%]">Submit</button>
+
+                    </div>
+                        
 
                 </section>
 
@@ -2090,7 +3556,5 @@
                         </main> 
                         
                         -->
-
-
 
 </html>

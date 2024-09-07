@@ -1,48 +1,38 @@
 
 
 .navbarOption{
-
     color:white;
-
-    font-size: 1.6rem;
-
+    font-size: 1.4rem;
+    font-weight: 600;
 }
 
 .navbarOption:hover{
-
     color:blue;
-
     transition: all 400ms;
 
 }
 
 
 #menuAccessButton{
-
     transition: all 600ms;
 
 }
 
 #menuAccessButton:hover{
-
     scale: 1.05;
-
     background-color: #0017e7;
 
 }
 
 
 .pageLogo{
-
     transition: all 500ms;
-
     font-weight:600;
 
 }
 
 
 .pageLogo:hover{
-
     scale: 1.04;
 
 }
@@ -52,14 +42,12 @@
 
     from
     {
-
         transform: translateX(-99.8%);
 
     }
 
     to
     {
-
         transform: translateX(49.8%);
 
     }
@@ -71,54 +59,39 @@
 
     width: 150px;
     height: 240px;
-
     margin-top: 20px;
-
     margin-bottom: 20px;
-
     transition: all 300ms;
 
 }
 
 .carouselImage:hover{
-
     scale: 1.05;
 
 }
 
 
 .carouselContainer::before{
-
     content: '';
-
     height: 100%;
-
     width: 12%;
-
     z-index: 2;
-
     background: white;
 
 }
 
 
 .carouselContainer::after{
-
     content: '';
-
     height: 100%;
-
     z-index: 2;
-
     width: 12%;
-
     background: white;
 
 }
 
 
 .slide{
-
     animation: 25s slide linear infinite;
 
 }
@@ -126,7 +99,6 @@
 
 
 .slide:hover{
-
     animation-play-state: paused;
 
 }
@@ -139,18 +111,14 @@
 
 
 #searchIcon{
-
     z-index: 2;
 
 }
 
 
 #bookTitle{
-
     z-index: 2;
-
     position: absolute;
-
     top:28%;
 
 }
@@ -160,13 +128,9 @@
 
     display: flex;
     flex-direction: column;
-
     justify-content: center;
-
     align-items: center;
-
     gap:0.5rem;
-
     padding: 1rem;
 
     width: 25%;
@@ -176,53 +140,39 @@
 
 
 .featureTitle{
-
     text-align: start;
-
     width: 100%;
-
     height: fit-content;
-
     color:blue;
-
     font-size: 2rem;
-
     font-weight:700;
 
 }
 
 
 .featureText{
-
     color: white;
-
     text-align: start;
-
     font-size: 14px;
-
     font-weight: 500;
 
 }
 
 
 .mainFeatureTitle{
-
     font-weight: 600;
 
 }
 
 
 .infoButton{
-
     font-weight: 500;
 
 }
 
 
 .infoBoxTitle{
-
-    font-weight: 500;
-
+    font-weight: 600;
 }
 
 .infoBoxParaph{
@@ -232,235 +182,165 @@
 
 
 .sliderImage{
-
     width: 250px;
-
     height: 400px;
-    
     transition: all 300ms;
 
 }
 
 .sliderImage:hover{
-
     scale: 1.03;
-
 }
 
 
 .rankedImageBook{
-
-    width: 150px;
-    height: 250px;
-
+    width: 132px;
+    height: 232px;
     transition: all 300ms;
-
 }
 
 .rankedImageBook:hover{
-
     scale: 1.04;
-
 }
 
 
 .rankedBookContainer{
-
-    width: 180px;
-    height: 420px;
-
+    width: 160px;
+    height: 400px;
     display: flex;
-
     align-items: center;
-
     flex-flow: column;
-
     background-color: whitesmoke;
-
     padding-top: 1rem;
     padding-bottom: 1rem;
-
 }
 
 
 .cardStarIcon{
-
     width: 1.5rem;
     height: 1.5rem;
-
     transition: all 200ms;
-
 }
 
 .cardStarIcon:hover{
-
     scale: 1.3;
-
 }
 
 
 .bookName{
-
     font-weight: 600;
-
     font-size: 1.5rem;
 
 }
 
 
 .autorName{
-
-    font-weight: 400;
+    font-weight: 40;
     font-size: 1rem;
-
 }
 
 
 .priceContainer{
-
     display: flex;
     width: 90%;
     height: fit-content;
-
     background-color: red;
-
     border-radius: 1rem;
-
 }
 
 
 .priceTitleSection{
-
     display: flex;
     flex-flow: column;
-
     align-items: center;
-
     width: 50%;
     height: 100%;
-
 }
 
 
 .priceTitle{
-
     font-weight: 700;
     font-size: 1.2rem;
-
 }
 
 
 .priceWithTax{
-
     font-size: 1rem;
     font-weight: 400;
-
 }
 
 
 .priceIconSection{
-
     display: flex;
-
     flex-flow: column;
-
     align-items: center;
-
     justify-content: center;
-
     width: 50%;
     height: 100%;
-
 }
 
 
 .buyIconContainer{
-
     width: 2.5rem;
     height: 2.5rem;
-
     display: flex;
-
     justify-content: center;
-
     align-items: center;
-
     border-radius: 100%;
-
     background-color: wheat;
-
     transition: all 250ms;
-
 }
 
 .buyIconContainer:hover{
-    
     scale: 1.1;
-
 }
 
 
 .selledBookImage{
-
-    width: 130px;
-    height: 230px;
-
+    width: 180px;
+    height: 220px;
     transition: all 350ms;
-
+    margin-left: 8%;
 }
 
 
 .selledBookImage:hover{
-
     scale:1.03;
-
 }
 
 
 .selledBookContainer{
-
-    width: 370px;
+    width: 390px;
     height: 300px;
+    padding-left: 1%;
     display: flex;
-
     background-color: aliceblue;
-
 }
 
 
 .sellSection1{
-
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 50%;
     height: 100%;
-
 }
 
 
 .sellSection2{
-
     width: 50%;
     height: 100%;
-
     padding: 0.5rem;
-
     display: flex;
     align-items: start;
     flex-direction: column; 
-
 }
 
 
 .sellLinksContainer{
-
     width: 95%;
     height: 3rem;
-
     gap: 0.5rem;
-
     display: flex;
     justify-content: center;
     align-items: center;
@@ -469,13 +349,11 @@
 
 
 .categorieLink{
-
     width: 48%;
     height: 2rem;
     border-radius: 0.4rem;
-
-    font-size: 0.8rem;
-
+    font-size: 0.6rem;
+    font-weight: 600;
     background-color: #0017e7;
 
     display: flex;
@@ -491,140 +369,147 @@
     display: flex;
     justify-content: center;
     align-items: center;
-
     width: 48%;
 
     gap: 10%;
     height: 2rem;
     border-radius: 0.4rem;
-
     background-color: green;
 
 }
 
 
 .starScoreIcon{
-
     width: 1rem;
     height: 1rem;
 }
 
 
 .starSpan{
-
     font-weight: 600;
-
     font-size: 1.5rem;
-
 }
 
 
 .selledBookTitle{
-
     font-size: 1.6rem;
-
     font-weight: 600;
-
 }
 
 
 .selledBookAutor{
-
     font-weight: 1.2rem;
-
     font-weight: 400;
-
 }
 
 
 .selledBookPrice{
-
-    font-size: 2rem;
+    font-size: 1.8rem;
     font-weight: 600;
-
 }
 
 
 .timeSaleSpan{
-
     border: 4px solid black;
-
     width: 18%;
     height: 80%;
     font-size: 2rem;
     font-weight: 700;
-
     display: flex;
     justify-content: center;
     flex-direction: column;
     align-items: center;
-
 }
 
 
 .spanTimeMetric{
-
     font-weight: 400;
     font-size: 0.7rem;
-
 }
 
 
 .testimonialImage2{
-
     z-index: 2;
-
     position: absolute;
-
-    margin-left: 28px;
-
+    margin-left: 2%;
 }
 
 .testimonialImage3{
-
     z-index: 3;
-
     position: absolute;
-
-    margin-left: 56px;
-
+    margin-left: 4%;
 }
 
 .testimonialImage4{
-
     z-index: 4;
-
     position: absolute;
-        
-    margin-left: 74px;
-
+    margin-left: 6%;
 }
 
 .testimonialImage5{
-
     z-index: 5;
-
     position: absolute;
-    
-    margin-left: 102px;
-
+    margin-left: 8%;
 }
 
 .testimonialImage6{
-
     z-index: 6;
-
     position: absolute;
-
-    margin-left: 130px;
-
+    margin-left: 10%;
 }
 
 
 .writterImage{
-
     z-index: 2;
-
     position: absolute;
 
 }
+
+.footerTitle{
+    font-size: 1.1rem;
+    font-weight: 500;
+}
+
+.footerIcon{
+    width: 85%;
+    height: 85%;
+    transition: all 400ms;
+}
+
+.footerIcon:hover{
+    scale:1.1;
+}
+
+.autorContainer{
+    border-radius: 1.2rem;
+}
+
+.bookSlide{
+    width: 100%;
+    height: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 2% 0 2%;
+}
+
+.sliderButton,.sliderButton2{
+    border-radius: 100%;
+    width: 2.6rem;
+    height: 2.6rem;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    background: white;
+    margin: 0 0.3% 0 0.3%;
+}
+
+.sliderButton2{
+    width: 4rem;
+}
+
+.bestSelledBookSlide{
+    width: 100%;
+    height: 100%;
+}
+
