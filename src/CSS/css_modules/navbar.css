@@ -1,0 +1,40 @@
+.navbarOption{
+    color:white;
+    font-size: 1.4rem;
+    font-weight: 600;
+}
+
+.navbarOption:hover{
+    color:blue;
+    transition: all 400ms;
+
+}
+
+
+#menuAccessButton{
+    transition: all 600ms;
+
+}
+
+#menuAccessButton:hover{
+    scale: 1.05;
+    background-color: #0017e7;
+
+}
+
+
+.pageLogo{
+    transition: all 500ms;
+    font-weight:600;
+
+}
+
+
+.pageLogo:hover{
+    scale: 1.04;
+
+}
+
+#searchIcon{
+    z-index: 2;
+}

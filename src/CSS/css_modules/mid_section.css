@@ -1,0 +1,108 @@
+
+
+
+.infoButton{
+    font-weight: 500;
+
+}
+
+.infoBoxTitle{
+    font-weight: 600;
+}
+
+.infoBoxParaph{
+    font-weight: 600;
+
+}
+
+#bookTitle{
+    z-index: 2;
+    position: absolute;
+    top:28%;
+
+}
+
+
+@keyframes slide{
+
+    from
+    {
+        transform: translateX(-99.8%);
+
+    }
+
+    to
+    {
+        transform: translateX(49.8%);
+
+    }
+
+}
+
+
+.carouselImage{
+
+    width: 150px;
+    height: 240px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    transition: all 300ms;
+
+}
+
+.carouselImage:hover{
+    scale: 1.05;
+
+}
+
+
+.carouselContainer::before{
+    content: '';
+    height: 100%;
+    width: 12%;
+    z-index: 2;
+    background: white;
+
+}
+
+
+.carouselContainer::after{
+    content: '';
+    height: 100%;
+    z-index: 2;
+    width: 12%;
+    background: white;
+
+}
+
+
+.slide{
+    animation: 25s slide linear infinite;
+
+}
+
+
+
+.slide:hover{
+    animation-play-state: paused;
+
+}
+
+
+.imageContainer{
+
+    margin-left: 1.5rem;
+}
+
+
+
+.sliderImage{
+    width: 250px;
+    height: 400px;
+    transition: all 300ms;
+
+}
+
+.sliderImage:hover{
+    scale: 1.03;
+}

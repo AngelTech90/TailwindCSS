@@ -755,6 +755,10 @@ video {
   margin-left: 0.2%;
 }
 
+.ml-\[2\%\] {
+  margin-left: 2%;
+}
+
 .box-border {
   box-sizing: border-box;
 }
@@ -1106,6 +1110,10 @@ video {
   width: 99.4%;
 }
 
+.w-\[48\%\] {
+  width: 48%;
+}
+
 .max-w-2xl {
   max-width: 42rem;
 }
@@ -1382,6 +1390,10 @@ video {
 
 .p-\[4\%\] {
   padding: 4%;
+}
+
+.p-\[0\.25\%\] {
+  padding: 0.25%;
 }
 
 .px-\[2\%\] {

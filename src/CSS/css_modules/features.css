@@ -1,0 +1,36 @@
+.featureSection{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap:0.5rem;
+    padding: 1rem;
+    width: 25%;
+    height: 90%;
+}
+
+
+.featureTitle{
+    text-align: start;
+    width: 100%;
+    height: fit-content;
+    color:blue;
+    font-size: 2rem;
+    font-weight:700;
+
+}
+
+
+.featureText{
+    color: white;
+    text-align: start;
+    font-size: 14px;
+    font-weight: 500;
+
+}
+
+
+.mainFeatureTitle{
+    font-weight: 600;
+
+}
