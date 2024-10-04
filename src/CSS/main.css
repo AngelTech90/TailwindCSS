@@ -291,12 +291,11 @@
 }
 
 .bookSlide{
-    width: 100%;
+    width: 120%;
     height: 100%;
     display: flex;
     align-items: center;
     justify-content: center;
-    margin: 0 2% 0 2%;
 }
 
 .sliderButton,.sliderButton2{
@@ -307,12 +306,8 @@
     justify-content: center;
     align-items: center;
     background: white;
-    margin: 0 0.3% 0 0.3%;
 }
 
-.sliderButton2{
-    width: 4rem;
-}
 
 .bestSelledBookSlide{
     width: 100%;
